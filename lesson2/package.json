@@ -1,0 +1,22 @@
+{
+  "name": "123",
+  "version": "1.0.0",
+  "description": "123",
+  "main": "index.js",
+  "scripts": {
+    "test": "123"
+  },
+  "repository": {
+    "type": "git",
+    "url": "node study"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Mr.wong",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "utility": "^1.8.0"
+  }
+}
