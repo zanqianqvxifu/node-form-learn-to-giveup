@@ -17,13 +17,12 @@ app.get('/',function(req,res,next){
 		//获取id为opic_list下的类名为topic_title下的元素
 		$('#topic_list .topic_title').each(function(idx,ele){
 			var $ele = $(ele);
-			console.log(ele)
 			items.push({
 				title:$ele.attr('title'),
 				href:$ele.attr('href')
 			});
 		});
-		res.send(items);
+		res.send($ele);
 	});
 });
 
