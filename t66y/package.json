@@ -1,0 +1,19 @@
+{
+  "name": "t66y",
+  "version": "1.0.0",
+  "description": "t66y",
+  "main": "app.js",
+  "scripts": {
+    "test": "t66y"
+  },
+  "keywords": [
+    "t66y"
+  ],
+  "author": "mrwong",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "express": "^4.14.0",
+    "superagent": "^2.0.0"
+  }
+}
