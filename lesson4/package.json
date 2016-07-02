@@ -1,0 +1,18 @@
+{
+  "name": "eventproxy",
+  "version": "1.0.0",
+  "description": "eventproxy",
+  "main": "app.js",
+  "scripts": {
+    "test": "eventproxy"
+  },
+  "keywords": [
+    "eventproxy"
+  ],
+  "author": "mrwong",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "superagent": "^2.0.0"
+  }
+}
