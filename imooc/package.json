@@ -1,0 +1,14 @@
+{
+  "name": "imooc",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "app.js",
+  "scripts": {
+    "test": "imooc"
+  },
+  "keywords": [
+    "imooctest"
+  ],
+  "author": "mrwong",
+  "license": "ISC"
+}
