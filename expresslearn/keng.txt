@@ -1,0 +1,14 @@
+npm中本地安装express 4  命令变为：npm install -g express-generator（express4已经把命令行工具分离出来，上面的命令实际安装的就是express4的命令行）
+
+启动工程不能以 node xxx.js 换成了npm start
+
+
+使用expres4快速创建一个工程
+
+1.创建工程文件夹
+2.使用npm install 安装express4 （注意e4安装方法已经不一样了）
+3.使用express 命令创建工程 express -t [模板][工程文件名]
+4.安装完成后会提示 install dependencies:
+     $ cd microblog && npm install
+运行npm install 这时安装依赖包
+3.启动服务器  npm start
