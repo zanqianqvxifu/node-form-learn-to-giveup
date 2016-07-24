@@ -4,23 +4,27 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var expresspartials = require('express-partials');
+// var multer = require('multer');
+
+//会话中间件
 var session = require('express-session');
-var flash = require('connect-flash');
+var MongoStore = require('connect-mongo')(session);
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 //数据库
-var MongoStore = require('connect-mongo')(session);
+
 var settings = require('./settings');
+var flash = require('connect-flash');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(expresspartials());
+app.use(flash());
 
 app.use(session({
   secret: settings.cookieSecret,
@@ -29,15 +33,12 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   store: new MongoStore({
-    /*db: settings.db,
-    host: settings.host,
-    port: settings.port*/
     url: 'mongodb://localhost/blog'
   })
 }));
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(flash());
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -45,8 +46,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/login',routes);
-app.use('/users', users);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -55,6 +55,19 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+//upload
+// var storage = multer.diskStroage({
+//   destination:function(req,file,cb){
+//     cb(null,'./public/images')
+//   },
+//   filename:function(req,file,cb){
+//     cb(null,file.originalname)
+//   }
+// });
+
+// var upload = multer({
+//   storage:storage
+// })
 // error handlers
 
 // development error handler

@@ -1,8 +1,8 @@
 module.exports = {
 	//用于加密
-  cookieSecret: 'microblogbyvoid',
+  cookieSecret: 'microblog',
   //数据库名称
-  db: 'microblog',
+  db: 'blog',
   //数据库地址
   host: 'localhost',
   port:27017
